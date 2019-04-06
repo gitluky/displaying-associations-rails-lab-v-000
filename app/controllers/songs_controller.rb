@@ -43,8 +43,11 @@ class SongsController < ApplicationController
 
   private
 
+  def set_song
+    @song = Song.find_by_id(params[:id])
+  end
+
   def song_params
     params.require(:song).permit(:title)
   end
 end
-
