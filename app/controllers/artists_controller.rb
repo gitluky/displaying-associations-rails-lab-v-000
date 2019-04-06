@@ -27,7 +27,6 @@ class ArtistsController < ApplicationController
   end
 
   def update
-    @artist = Artist.find(params[:id])
 
     @artist.update(artist_params)
 
@@ -39,7 +38,6 @@ class ArtistsController < ApplicationController
   end
 
   def destroy
-    @artist = Artist.find(params[:id])
     @artist.destroy
     flash[:notice] = "Artist deleted."
     redirect_to artists_path
